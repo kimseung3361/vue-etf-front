@@ -36,15 +36,13 @@
 </template>
 
 <script setup lang="ts">
-import HomeFeeBar from '~/components/home/FeeBar.vue'
 import type { EtfCategory } from '~/composables/useHomeCategories'
 
 const props = defineProps<{ category: EtfCategory }>()
+const { pct } = useEtfFormat()
 
 const maxFee = computed(() => {
   const all = [props.category.top, ...props.category.others]
-  return Math.max(...all.map(i => i.fee))
+  return Math.max(...all.map((i) => i.fee))
 })
-
-const pct = (fee: number) => (fee * 100).toFixed(3) + '%'
 </script>

@@ -9,13 +9,8 @@
       <CategoryTabs class="hidden md:block" />
 
       <div class="flex items-center gap-2">
-        <button class="rounded-lg border px-3 py-2 text-sm hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800">설명</button>
-        <button
-          class="rounded-lg border px-3 py-2 text-sm hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800"
-          @click="toggle"
-        >
-          {{ isDark ? '☀️' : '🌙' }}
-        </button>
+        <UiButton @click="isExplainOpen = true">설명</UiButton>
+        <UiButton @click="toggle">{{ isDark ? '☀️' : '🌙' }}</UiButton>
       </div>
     </div>
 
@@ -23,10 +18,13 @@
       <CategoryTabs />
     </div>
   </header>
+
+  <UiExplainModal v-model="isExplainOpen" />
 </template>
 
 <script setup lang="ts">
 import CategoryTabs from '~/components/layout/CategoryTabs.vue'
 
 const { isDark, toggle } = useDarkMode()
+const isExplainOpen = ref(false)
 </script>

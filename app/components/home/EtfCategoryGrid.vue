@@ -32,7 +32,7 @@
     <!-- 데이터 -->
     <section v-else class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
       <HomeEtfCategoryCard
-        v-for="c in categories"
+        v-for="c in filteredCategories"
         :key="c.code"
         :category="c"
       />
@@ -44,5 +44,12 @@
 import HomeEtfCategoryCard from '~/components/home/EtfCategoryCard.vue'
 import { useHomeCategories } from '~/composables/useHomeCategories'
 
+const route = useRoute()
 const { categories, loading, error, refresh } = useHomeCategories()
+
+const filteredCategories = computed(() => {
+  const tab = route.query.tab as string | undefined
+  if (!tab) return categories.value
+  return categories.value.filter((c) => c.code === tab)
+})
 </script>
