@@ -16,6 +16,7 @@
 const route = useRoute()
 
 const tabs = [
+  { code: '', label: '전체' },
   { code: 'SP500', label: 'S&P 500' },
   { code: 'NDX', label: '나스닥 100' },
   { code: 'DOWDIV', label: '미국배당다우존스' },

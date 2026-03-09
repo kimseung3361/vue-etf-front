@@ -12,6 +12,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.93.2",
     "axios": "^1.13.4",
+    "chart.js": "^4.5.1",
     "csvtojson": "^2.0.14",
     "flowbite": "^4.0.1",
     "iconv-lite": "^0.7.2",

@@ -1,5 +1,5 @@
 <template>
-  <header class="border-b bg-white dark:border-gray-800 dark:bg-gray-900">
+  <header class="sticky top-0 z-50 border-b bg-white dark:border-gray-800 dark:bg-gray-900">
     <div class="mx-auto flex w-full items-center justify-between px-6 py-4">
       <NuxtLink to="/" class="flex items-center gap-2 font-bold">
         <span class="text-lg">🏆</span>

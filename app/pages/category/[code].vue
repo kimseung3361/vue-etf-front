@@ -27,6 +27,15 @@
       <!-- Best Pick 카드 -->
       <CategoryBestPickCard v-if="best" :etf="best" :total-count="data.etfs.length" />
 
+      <!-- 실비용 계산기 -->
+      <CategoryCostCalculator :etfs="data.etfs" />
+
+      <!-- 복리 효과 시뮬레이터 -->
+      <CategoryCompoundChart :etfs="data.etfs" />
+
+      <!-- ETF 직접 비교 -->
+      <CategoryDirectCompare :etfs="data.etfs" />
+
       <!-- 전체 비교 테이블 -->
       <CategoryEtfCompareTable :etfs="data.etfs" />
 
